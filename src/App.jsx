@@ -1378,7 +1378,7 @@ function InventoryApp() {
 }
 export default function App() {
   return (
-    <PinGate appName="Shop Inventory" pin="123094" storageKey="inv_unlocked">
+    <PinGate appName="Shop Inventory" pin="1016" storageKey="inv_unlocked">
       <InventoryApp />
     </PinGate>
   );
