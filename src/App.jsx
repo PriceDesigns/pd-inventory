@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useMemo, useCallback } from "react";
 import { storage } from "./storage.js";
+import PinGate from "./PinGate.jsx";
 import {
   Plus,
   Trash2,
@@ -1216,7 +1217,7 @@ function InventoryTable({ items, onRowClick }) {
 
 /* ---------- App ---------- */
 
-export default function App() {
+function InventoryApp() {
   useFonts();
   const [tab, setTab] = useState("machined");
   const [machined, setMachined] = useState([]);
@@ -1373,5 +1374,12 @@ export default function App() {
         showSupplierFields={tab === "materials"}
       />
     </div>
+  );
+}
+export default function App() {
+  return (
+    <PinGate appName="Shop Inventory" pin="123094" storageKey="inv_unlocked">
+      <InventoryApp />
+    </PinGate>
   );
 }
